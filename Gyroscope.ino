@@ -17,8 +17,6 @@
 T_GYRO gyroMeter;
 T_GyroData gyroData;
 
-int ticks;
-
 void setup()
 {
     //The following line can be used if the Gyroscope data returned seems wrong or not accurate
@@ -31,6 +29,8 @@ void setup()
 
 void loop()
 {
+    static int ticks = 0;
+
     //Get gyroscope data from the axis @ 50Hz (20ms)
     /*
     * Using this if statement allow to keep track of the current time and will allow the execution of the user code
