@@ -19,8 +19,7 @@ T_BLE bleManager;
 UUID uuid;
 T_BLE_Characteristic bleChar;
 
-//Variou variable to keep track of the time elapsed, a flag to toggle the data and the buffer in which the data will be stored
-int ticks;
+//Flag to toggle the data and the buffer in which the data will be stored
 bool flag = true;
 unsigned char buffData[14];
 
@@ -42,6 +41,8 @@ void setup(){
 }
 
 void loop(){
+    static int ticks = 0;
+
     //This if statement keep track of the ms elapsed so that we update the data that are broadcasted @ 1Hz (1000ms)
     /*
     * Using this if statement allow to keep track of the current time and will allow the execution of the user code
