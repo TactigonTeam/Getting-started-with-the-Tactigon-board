@@ -14,7 +14,6 @@
  */
 
 #include "tactigon_BLE.h"
-#include "tactigon_IMU.h"
 
 T_BLE bleManager;
 UUID uuid;
