@@ -11,7 +11,6 @@
  * 
  * refer to https://github.com/TactigonTeam/Docs/blob/master/Tactigon%20ONE%20V1%20Pinout.pdf for TactigonV1 pinout
  * 
- * 
  */
 
 #include <tactigon_led.h>
