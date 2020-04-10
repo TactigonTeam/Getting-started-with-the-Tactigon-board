@@ -17,8 +17,6 @@
 T_Battery battMeter;
 T_BattData battData;
 
-int ticks;
-
 void setup()
 {
     Serial.begin(9600);
@@ -27,6 +25,8 @@ void setup()
 
 void loop()
 {
+    static int ticks = 0;
+
     //Get battery data from the sensors @ 2Hz (500ms)
     /*
     * Using this if statement allow to keep track of the current time and will allow the execution of the user code
