@@ -58,12 +58,5 @@ void loop()
 */
 float ms2tog(float input_val)
 {
-    if (input_val != 0)
-    {
-        return (input_val / 9.81);
-    }
-    else
-    {
-        return 0;
-    }
+    return (input_val / 9.81);
 }
