@@ -17,7 +17,6 @@
 T_QUAT quatMeter;
 T_QData quatData;
 
-int ticks;
 
 void setup()
 {
@@ -33,6 +32,8 @@ void setup()
 
 void loop()
 {
+    static int ticks = 0;
+
     //Get rotations and quaternions data from the axis @ 50Hz (20ms)
     /*
     * Using this if statement allow to keep track of the current time and will allow the execution of the user code
@@ -62,4 +63,24 @@ void loop()
         Serial.println(quatData.q3f);
         Serial.println();
     }
+}
+
+//convert [rad] to [deg]
+float radToDeg(float rad)
+{
+  return rad*180/PI;
+}
+
+/*
+ * remap roll in order to have 0 deg in horizontal position
+ * and +180,-180 periodicity around this zero position
+ */
+float rollZeroRemap(float r)
+{
+  if( (r > -180) && (r < 90) )
+    r = r + 90;
+  else
+    r = -270 + r;
+
+  return r;
 }
